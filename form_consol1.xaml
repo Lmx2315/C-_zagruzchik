@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zagruzchik"
         mc:Ignorable="d"
-        Title="form_consol1" Height="450" Width="254.367">
-    <Grid Margin="0,0,540,0">
-        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="412" Margin="6,5,-241,0" VerticalAlignment="Top" Width="235">
+        Title="form_consol1" Height="450" Width="800">
+    <Grid>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="792">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>

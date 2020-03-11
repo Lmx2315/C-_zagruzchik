@@ -19,7 +19,7 @@ namespace Zagruzchik
     /// Логика взаимодействия для form_consol1.xaml
     /// </summary>
     /// 
-   
+
     public partial class form_consol1 : Window
     {
 
@@ -51,13 +51,13 @@ namespace Zagruzchik
 
         public void Clear_data()
         {
-            richTextBox1.Document.Blocks.Clear();
+            richTextBox.Document.Blocks.Clear();
         }
 
         public void Show_data(string a)
         {
-            richTextBox1.Document.Blocks.Add(new Paragraph(new Run(a)));
-            richTextBox1.ScrollToEnd();
+            richTextBox.Document.Blocks.Add(new Paragraph(new Run(a)));
+            richTextBox.ScrollToEnd();
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)

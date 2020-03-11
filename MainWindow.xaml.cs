@@ -126,6 +126,7 @@ namespace Zagruzchik
             {
                 filename = openFileDialog.FileName;
                 proshivka = File.ReadAllText(filename);
+                console_text = console_text + proshivka;
             }
         }
     }

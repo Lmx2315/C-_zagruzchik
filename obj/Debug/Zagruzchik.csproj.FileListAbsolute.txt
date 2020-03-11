@@ -14,3 +14,5 @@ C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruz
 C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.pdb
 C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\form_consol1.g.cs
 C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\form_consol1.baml
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\pgr11.baml
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\pgr11.g.cs

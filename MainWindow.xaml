@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zagruzchik"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="240.559">
+        ResizeMode="NoResize"
+        Title="Загрузчик" Height="220.667" Width="240.559">
     <Grid Margin="0,0,536,0">
         <TextBox x:Name="textBox_comport" HorizontalAlignment="Left" Height="23" Margin="157,15,-219,0" TextWrapping="Wrap" Text="COM9" VerticalAlignment="Top" Width="62"/>
         <Button x:Name="button_comport_open" Content="open" HorizontalAlignment="Left" Margin="166,50,-211,0" VerticalAlignment="Top" Width="45" Click="button_comport_open_Click"/>
         <TextBox x:Name="textBox_comport_message" HorizontalAlignment="Left" Height="23" Margin="11,15,-131,0" TextWrapping="Wrap" Text="~0 help;" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button_comport_send" Content="send" HorizontalAlignment="Left" Margin="11,50,-86,0" VerticalAlignment="Top" Width="75" Click="button_comport_send_Click"/>
-        <Button x:Name="button_open_file" Content="open file" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="button_Click" Margin="136,373,-211,0"/>
-        <Button x:Name="button_console" Content="console" HorizontalAlignment="Left" Margin="11,87,-86,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
-
+        <Button x:Name="button_open_file" Content="open file" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="button_Click" Margin="144,142,-219,0"/>
+        <Button x:Name="button_console" Content="console" HorizontalAlignment="Left" Margin="144,103,-219,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
+  
     </Grid>
 </Window>

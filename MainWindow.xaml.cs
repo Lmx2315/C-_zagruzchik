@@ -100,27 +100,18 @@ namespace Zagruzchik
                 }));
         }
 
+        public int Progress_send=0;
         void HEX_send ()
         {
             string command1 = " ~0 EPCS_WR:";
-            string com_msg="";
+            string com_msg;
             SolidColorBrush myBrush = new SolidColorBrush(Colors.Red);
-
+            int N_row = 0;//число строк в файле (number of rows in the file)
             int i = 0;
             int j = 0;
             int l = 0;
-            int N_row = 0;//число строк в файле (number of rows in the file)
             int FLAG = 0;
-            string msg="";
-
-            ProgressBar progbar = new ProgressBar();
-            progbar.IsIndeterminate = false;
-            progbar.Orientation = Orientation.Horizontal;
-            progbar.Width = 150;
-            progbar.Height = 15;
-            Duration duration = new Duration(TimeSpan.FromSeconds(10));
-          //  DoubleAnimation doubleanimation = new DoubleAnimation(100.0, duration);
-          //  progbar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
+            string msg;           
 
             if (FLAG_FILE==false)
             {
@@ -143,12 +134,16 @@ namespace Zagruzchik
                 }
             }
             else
-            {
+            {    
                 for (i = 0; i < (proshivka.Length); i++)//считаем количество строк в файле
                 {
                     if (proshivka.Substring(i, 1) == ":") N_row++;
                 }
-                
+
+                pgr11 pg1 = new pgr11();
+                pg1.pbStatus.Maximum = (double)N_row;
+                pg1.Show();
+
                 for (i = 0; i < (proshivka.Length); i++)
                 {
 
@@ -175,8 +170,10 @@ namespace Zagruzchik
                                 button_comport_send.Background = Brushes.Green;
                                 com_msg = command1 + msg + ";";
                                 msg = "";
-                                Debug.WriteLine(com_msg);
-                                //      serialPort1.Write(com_msg);
+            //                  Debug.WriteLine(com_msg);
+                                serialPort1.Write(com_msg);
+                                Progress_send++;
+                                pg1.pbStatus.Value++;
                             }
                             catch (Exception ex)
                             {
@@ -189,7 +186,7 @@ namespace Zagruzchik
                     }
 
                 }
-
+                pg1.Close();
                 FLAG_FILE = false;
             }
           

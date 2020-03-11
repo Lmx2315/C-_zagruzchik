@@ -5,14 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zagruzchik"
         mc:Ignorable="d"
-        Title="form_consol1" Height="450" Width="800">
-    <Grid>
-        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="792">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
+        Title="form_consol1" Height="450" Width="481.786">
+    <Grid Margin="0,0,2,0">
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="AUTO" VerticalAlignment="Top" Width="AUTO">
+            <FlowDocument/>
         </RichTextBox>
 
     </Grid>

@@ -31,6 +31,7 @@ namespace Zagruzchik
         }
 
         public SerialPort serialPort1 = new SerialPort();
+        private bool FLAG_FILE = false;
 
         private void button_comport_open_Click(object sender, RoutedEventArgs e)
         {
@@ -99,9 +100,106 @@ namespace Zagruzchik
                 }));
         }
 
+        void HEX_send ()
+        {
+            string command1 = " ~0 EPCS_WR:";
+            string com_msg="";
+            SolidColorBrush myBrush = new SolidColorBrush(Colors.Red);
+
+            int i = 0;
+            int j = 0;
+            int l = 0;
+            int N_row = 0;//число строк в файле (number of rows in the file)
+            int FLAG = 0;
+            string msg="";
+
+            ProgressBar progbar = new ProgressBar();
+            progbar.IsIndeterminate = false;
+            progbar.Orientation = Orientation.Horizontal;
+            progbar.Width = 150;
+            progbar.Height = 15;
+            Duration duration = new Duration(TimeSpan.FromSeconds(10));
+          //  DoubleAnimation doubleanimation = new DoubleAnimation(100.0, duration);
+          //  progbar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
+
+            if (FLAG_FILE==false)
+            {
+                try
+                {
+                    if (serialPort1.IsOpen == false)
+                    {
+                        serialPort1.Open();
+                    }
+
+                    button_comport_send.Background = Brushes.Green;
+                    serialPort1.Write(textBox_comport_message.Text);
+                 }
+                catch (Exception ex)
+                {
+
+                    // что-то пошло не так и упало исключение... Выведем сообщение исключения
+                    Console.WriteLine(string.Format("Port:'{0}' Error:'{1}'", serialPort1.PortName, ex.Message));
+                    button_comport_send.Background = myBrush;
+                }
+            }
+            else
+            {
+                for (i = 0; i < (proshivka.Length); i++)//считаем количество строк в файле
+                {
+                    if (proshivka.Substring(i, 1) == ":") N_row++;
+                }
+                
+                for (i = 0; i < (proshivka.Length); i++)
+                {
+
+                    if (proshivka.Substring(i, 1) == ":") //ищем разделитель (find separator)
+                    {
+                        FLAG = 1;
+                        j = i + 1;
+                    }
+
+                    if (FLAG == 1)
+                    {
+                        if ((proshivka.Substring(i, 1) == "\r") ||
+                            (proshivka.Substring(i, 1) == "\n") ||
+                            (i == (proshivka.Length - 1)))
+                        {
+                            //  Debug.WriteLine("j:" + j);
+                            //  Debug.WriteLine("i:" + i);
+                            l = i - j;
+                            msg = proshivka.Substring(j, l);//(помнить !!! что l - длинна подстроки!!!)копируем подстроку в сообщение для отправки (copy substring to message for send)
+                            if (i == (proshivka.Length - 1)) msg = proshivka.Substring(j);//конец строки
+                                                                                          //  Debug.WriteLine(msg);
+                            try
+                            {
+                                button_comport_send.Background = Brushes.Green;
+                                com_msg = command1 + msg + ";";
+                                msg = "";
+                                Debug.WriteLine(com_msg);
+                                //      serialPort1.Write(com_msg);
+                            }
+                            catch (Exception ex)
+                            {
+                                // что-то пошло не так и упало исключение... Выведем сообщение исключения
+                                Console.WriteLine(string.Format("Port:'{0}' Error:'{1}'", serialPort1.PortName, ex.Message));
+                                button_comport_send.Background = myBrush;
+                            }
+                            FLAG = 0;
+                        }
+                    }
+
+                }
+
+                FLAG_FILE = false;
+            }
+          
+            
+
+        }
+
         private void button_comport_send_Click(object sender, RoutedEventArgs e)
         {
-
+            HEX_send();
         }
 
         public bool[] Console_form = new bool[1];
@@ -127,6 +225,7 @@ namespace Zagruzchik
                 filename = openFileDialog.FileName;
                 proshivka = File.ReadAllText(filename);
                 console_text = console_text + proshivka;
+                FLAG_FILE = true;
             }
         }
     }

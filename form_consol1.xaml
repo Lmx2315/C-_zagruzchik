@@ -1,0 +1,19 @@
+﻿<Window x:Class="Zagruzchik.form_consol1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zagruzchik"
+        mc:Ignorable="d"
+        Title="form_consol1" Height="450" Width="254.367">
+    <Grid Margin="0,0,540,0">
+        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="412" Margin="6,5,-241,0" VerticalAlignment="Top" Width="235">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.csprojAssemblyReference.cache
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\MainWindow.g.cs
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\App.g.cs
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik_MarkupCompile.cache
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik_MarkupCompile.lref
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\bin\Debug\Zagruzchik.exe.config
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\bin\Debug\Zagruzchik.exe
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\bin\Debug\Zagruzchik.pdb
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\MainWindow.baml
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.g.resources
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.Properties.Resources.resources
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.csproj.GenerateResource.cache
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.exe
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\Zagruzchik.pdb
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\form_consol1.g.cs
+C:\Work_murmansk\STM32_K330\330_plate_program\Csharp_zagruzchik\obj\Debug\form_consol1.baml
